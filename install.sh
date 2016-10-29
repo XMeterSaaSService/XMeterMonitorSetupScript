@@ -1,6 +1,12 @@
 #!/bin/bash
 
-set -m
+if [[ $# -ne 2 || "$1" == "help" ]] ; then
+	echo "Usage: $0 <influx server> <influx server port>"
+	exit 1
+fi
+
+[ -e /etc/redhat-release ] || ( echo "Sorry, we cannot install collectd for your OS type at this moment, please consider manual install collectd and configure it to point to influx server" && exit 2 )
+
 CONFIG_FILE="/etc/collectd.conf"
 
 if [[ -n ${1} ]] ;then
