@@ -18,7 +18,7 @@
 
 # 
 ## Linux上安装collectd
-### Centos 7.x / RHEL 7.x
+### CentOS 7.x / RHEL 7.x
 1. 安装collectd
 
 	```bash
