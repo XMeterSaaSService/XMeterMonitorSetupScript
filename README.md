@@ -26,8 +26,7 @@
 	yum install -y collectd
 	```
 
-2. 拷贝collectd.conf.centos7.sample到/etc/collectd.conf
-找到下列配置行，改成您的influxdb服务器的IP地址
+2. 拷贝collectd.conf.centos7.sample到/etc/collectd.conf，找到下列配置行，改成您的influxdb服务器的IP地址
 
 	```
 	<Plugin network>
@@ -59,7 +58,7 @@
 	  Server "a.b.c.d" "25826"
 	```
 
-3. 修改/etc/collectd/collectd.conf，找到disk tag，成您机器上的Disk名称。
+3. 修改/etc/collectd/collectd.conf，找到disk tag，改成您机器上的Disk名称。
 
 	```
 	<Plugin disk>
@@ -73,7 +72,6 @@
 	systemctl start collectd
 	```
 
-### Ubuntu 14
 ### Ubuntu 14
 1. 卸载collectd：如果之前通过apt-get安装过collectd，缺省的安装版本为5.4.x，这个版本CPU插件功能还不是很完善，需要安装5.5以上版本的collectd。
 首先查看您的Ubuntu上是否安装了collectd，使用下列命令：
