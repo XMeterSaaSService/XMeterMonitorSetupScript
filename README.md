@@ -51,20 +51,22 @@
 	apt-get install collectd
 	```
 
-2. 拷贝collectd.conf.ubuntu16.sample到/etc/collectd/collectd.conf
-找到下列配置行，改成您的influxdb服务器的IP地址;将vda修改成您机器上的Disk名称。
+2. 拷贝collectd.conf.ubuntu16.sample到/etc/collectd/collectd.conf, 找到下列配置行，改成您的influxdb服务器的IP地址;将vda修改成您机器上的Disk名称。
 
 	```
 	<Plugin network>
 	  # XMeter: please replace the IP with your sutm (i.e. influxdb target)
 	  Server "a.b.c.d" "25826"
-          ...
+        ```
+
+3. 修改/etc/collectd/collectd.conf，找到disk tag，成您机器上的Disk名称。
+
+        ```
 	<Plugin disk>
           Disk "vda"
         ```
 
-
-3. 启动collectd
+4. 启动collectd
 
 	```
 	systemctl enable collectd
