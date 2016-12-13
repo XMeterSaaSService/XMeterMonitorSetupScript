@@ -112,7 +112,6 @@
 
 2. 配置
 	拷贝collectd.conf.ubuntu14.sample到/etc/collectd/collectd.conf，编辑/opt/collectd/etc/collectd.conf文件，找到下列配置行，改成您的influxdb服务器的IP地址。
-
         ```
         <Plugin network>
           # XMeter: please replace the IP with your sutm (i.e. influxdb target)
