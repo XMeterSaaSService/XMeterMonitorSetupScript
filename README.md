@@ -51,20 +51,20 @@
 	apt-get install collectd
 	```
 
-2. 拷贝collectd.conf.ubuntu16.sample到/etc/collectd/collectd.conf, 找到下列配置行，改成您的influxdb服务器的IP地址;将vda修改成您机器上的Disk名称。
+2. 拷贝collectd.conf.ubuntu16.sample到/etc/collectd/collectd.conf, 找到下列配置行，改成您的influxdb服务器的IP地址。
 
 	```
 	<Plugin network>
 	  # XMeter: please replace the IP with your sutm (i.e. influxdb target)
 	  Server "a.b.c.d" "25826"
-        ```
+	```
 
 3. 修改/etc/collectd/collectd.conf，找到disk tag，成您机器上的Disk名称。
 
-        ```
+	```
 	<Plugin disk>
           Disk "vda"
-        ```
+	```
 
 4. 启动collectd
 
@@ -97,7 +97,7 @@
 	sudo apt-get remove --auto-remove collectd
 	sudo apt-get purge collectd
 	sudo apt-get purge collectd-core
-        ```
+	```
 
 最后再次使用命令dpkg -l collectd来确认collectd已经被卸载。
 
@@ -122,11 +122,11 @@
 2. 配置
 拷贝collectd.conf.ubuntu14.sample到/etc/collectd/collectd.conf，编辑/opt/collectd/etc/collectd.conf文件，找到下列配置行，改成您的influxdb服务器的IP地址。
 
-        ```
+	```
         <Plugin network>
           # XMeter: please replace the IP with your sutm (i.e. influxdb target)
           Server "a.b.c.d" "25826"
-        ```
+	```
 
 另外，找到下列配置行，将vda修改成您机器上的Disk名称。
 
