@@ -52,18 +52,14 @@
 	```
 
 2. 拷贝collectd.conf.ubuntu16.sample到/etc/collectd/collectd.conf
-找到下列配置行，改成您的influxdb服务器的IP地址
+找到下列配置行，改成您的influxdb服务器的IP地址;将vda修改成您机器上的Disk名称。
 
 	```
 	<Plugin network>
 	  # XMeter: please replace the IP with your sutm (i.e. influxdb target)
 	  Server "a.b.c.d" "25826"
-	```
-
-另外，找到下列配置行，将vda修改成您机器上的Disk名称。
-        
-	```
-        <Plugin disk>
+          ...
+	<Plugin disk>
           Disk "vda"
         ```
 
@@ -77,6 +73,7 @@
 
 ### Ubuntu 14
 0. 卸载collectd
+
 如果之前通过apt-get安装过collectd，缺省的安装版本为5.4.x，这个版本CPU插件功能还不是很完善，需要安装5.5以上版本的collectd。
 首先查看您的Ubuntu上是否安装了collectd，使用下列命令：
 
