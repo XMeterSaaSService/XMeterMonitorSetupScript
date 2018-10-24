@@ -170,3 +170,32 @@
 	service collectd stop
 	service collectd start
 	```
+###SuSE Linux
+
+1. 安装collectd
+拷贝collectd-572-bin.tar.gz到被测服务器/opt/目录下
+
+	```
+	tar -xvf collectd-572-bin.tar.gz
+	```
+
+2. 拷贝collectd.conf.suse.sample到/opt/collectd/etc/collectd.conf, 找到下列配置行，改成您的influxdb服务器的IP地址。
+
+	```
+	<Plugin network>
+	  # XMeter: please replace the IP with your sutm (i.e. influxdb target)
+	  Server "a.b.c.d" "25826"
+	```
+
+再根据您的被监控机实际情况，修改Hostname, Plugin disk及interface配置段的磁盘设备名(比如sda, vda)和网卡接口名称(比如eth0)
+
+	```
+	<Plugin disk>
+          Disk "vda"
+	```
+
+3. 启动collectd
+
+	```
+	/opt/collectd/sbin/collectd
+	```
