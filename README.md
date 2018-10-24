@@ -170,7 +170,7 @@
 	service collectd stop
 	service collectd start
 	```
-###SuSE Linux
+### SuSE Linux
 
 1. 安装collectd
 拷贝collectd-572-bin.tar.gz到被测服务器/opt/目录下
